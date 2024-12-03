@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { assets } from '../assets/assets'
+import {motion} from 'motion/react'
 
 const Result = () => {
 
@@ -14,7 +15,12 @@ const Result = () => {
 
   return (
 
-    <form onSubmit={onSubmitHandler} className='flex flex-col min-h-[90vh] items-center justify-center'>
+    <motion.form 
+    initial={{ opacity: 0.2, y: 100 }}
+    transition={{ duration: 1 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={true}
+    onSubmit={onSubmitHandler} className='flex flex-col min-h-[90vh] items-center justify-center'>
       <div>
         <div className='relative '>
           <img src={image} className='max-w-sm rounded' alt="" />
@@ -32,7 +38,7 @@ const Result = () => {
             onChange={e => setInput(e.target.value)}
             value={input}
             type='text' placeholder='Describe what you want to generate'
-            className='flex-1 bg-transparent outline-none ml-8 max-sm:w-20 placeholder-color' />
+            className='flex-1 bg-transparent outline-none ml-8 max-sm:w-20 placeholder-neutral-200' />
           <button type='submit' className='bg-zinc-900 px-10 sm:px-16 py-3 rounded-full'>
             Generate
           </button>
@@ -46,7 +52,7 @@ const Result = () => {
           <a href={image} download className='bg-zinc-900 px-10 py-3 rounded-full cursor-pointer'>Download </a>
         </div>
       }
-    </form>
+    </motion.form>
 
   )
 }
