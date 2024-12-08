@@ -1,4 +1,4 @@
-import logo from './logo.svg'
+import logo from './logo.png'
 import logo_icon from './logo_icon.svg'
 import facebook_icon from './facebook_icon.svg'
 import instagram_icon from './instagram_icon.svg'
@@ -63,21 +63,21 @@ export const testimonialsData = [
     name: 'Donald Jackman',
     role: 'Graphic Designer',
     stars: 5,
-    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+    text: `I've been using image.ai for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
   },
   {
     image: profile_img_2,
     name: 'Richard Nelson',
     role: 'Content Creator',
     stars: 5,
-    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+    text: `I've been using image.ai for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
   },
   {
     image: profile_img_1,
     name: 'Donald Jackman',
     role: ' Graphic Designer',
     stars: 5,
-    text: `I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+    text: `I've been using image.ai for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
   },
 ]
 

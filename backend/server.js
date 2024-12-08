@@ -5,6 +5,7 @@ import 'dotenv/config'
 
 import connectDB from './config/mongodb.js'
 import userRouter from './routes/userRoute.js'
+import imageRouter from './routes/imageRoutes.js'
 
 
 
@@ -17,10 +18,11 @@ app.use(cors())
 
 await connectDB()
 
-app.use('/api/user' , userRouter)
+app.use('/api/user', userRouter)
+app.use('/api/image', imageRouter)
 
 app.get('/', (req, res) => {
-    res.send("Hello das")
+    res.send("API Working")
 })
 
 app.listen(PORT, () => {

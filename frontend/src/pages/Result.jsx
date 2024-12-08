@@ -1,26 +1,42 @@
-import React, { useState } from 'react'
+import React, { useState , useContext } from 'react'
 import { assets } from '../assets/assets'
-import {motion} from 'motion/react'
+import { motion } from 'motion/react'
+import { AppContext } from '../context/AppContext'
 
 const Result = () => {
 
   const [image, setImage] = useState(assets.sample_img_1)
   const [isImageLoaded, setIsImageLoaded] = useState(false)
-  const [loading, setLaoding] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [input, setInput] = useState('')
 
-  const onSubmitHandler = async(e) =>{
+
+  const { generateImage } = useContext(AppContext);
+
+  const onSubmitHandler = async (e) => {
+
+    e.preventDefault();
+    setLoading(true)
+
+    if (input) {
+      const image = await generateImage(input);
+      if (image) {
+        setIsImageLoaded(true);
+        setImage(image)
+      }
+    }
+    setLoading(false)
 
   }
 
   return (
 
-    <motion.form 
-    initial={{ opacity: 0.2, y: 100 }}
-    transition={{ duration: 1 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={true}
-    onSubmit={onSubmitHandler} className='flex flex-col min-h-[90vh] items-center justify-center'>
+    <motion.form
+      initial={{ opacity: 0.2, y: 100 }}
+      transition={{ duration: 1 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={true}
+      onSubmit={onSubmitHandler} className='flex flex-col min-h-[90vh] items-center justify-center'>
       <div>
         <div className='relative '>
           <img src={image} className='max-w-sm rounded' alt="" />
