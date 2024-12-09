@@ -44,6 +44,7 @@ const AppContextProvider = (props) => {
 
             if (data.success) {
                 loadCreditsData();
+                console.log(data)
                 return data.resultImage
             } else {
                 toast.error(data.message)
